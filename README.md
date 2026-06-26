@@ -7,14 +7,24 @@ BookRollで配布されているスライドをPDFとして保存できます．
 リポジトリをクローンしてください．
 ```
 git clone https://github.com/HaruhiroObora/BookRollDL
+cd BookRollDL
 ```
 または，このページの右上にあるCodeのボタンからzipを保存して展開してください．
 
 仮想環境を作成してください．
+
+Windowsの場合は
+```
+python -m venv .venv
+.venv\Scripts\activate
+```
+Mac OS，Linuxの場合は
 ```
 python3 -m venv .venv
 source .venv/bin/activate
 ```
+です．
+
 必要なライブラリをインストールします．
 ```
 pip install selenium beautifulsoup4 pymupdf pillow
@@ -22,6 +32,11 @@ pip install selenium beautifulsoup4 pymupdf pillow
 
 ## 実行方法
 仮想環境を有効にしておきます．
+Windowsの場合は
+```
+.venv\Scripts\activate
+```
+Mac OS，Linuxの場合は
 ```
 source .venv/bin/activate
 ```
@@ -40,4 +55,10 @@ LMSでサイトを選択して，BookRollにアクセスします．保存した
 ## ライセンス
 このプロジェクトは[MIT License](LICENSE)で公開されています．
 
-NotoSansJPのフォントファイルを同梱しています．NotoSansJPは[SIL Open Font License, Version 1.1](font/OFL.txt)の下で配布されています．
+NotoSansJPのフォントファイルを同梱しています．NotoSansJPは
+
+著作権：Copyright 2014-2021 Adobe (http://www.adobe.com/)
+
+ライセンス：[SIL Open Font License, Version 1.1](font/OFL.txt)
+
+の下で配布されています．
