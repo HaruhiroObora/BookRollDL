@@ -3,9 +3,12 @@ BookRollで配布されているスライドをPDFとして保存できます．
 
 ## インストール方法
 事前にPythonをインストールしておく必要があります．
+リポジトリをクローンしてください．
 ```
 git clone https://github.com/HaruhiroObora/BookRollDL
 ```
+または，このページの右上にあるCodeのボタンからzipを保存して展開してください．
+
 仮想環境を作成してください．
 ```
 python3 -m venv .venv
