@@ -40,9 +40,9 @@ def capture():
     try:
         if not path.lower().endswith(".pdf"):
             path += ".pdf"
+        pdf.save(path)
     except:
         return
-    pdf.save(path)
 
 def gopanda():
     driver.goto("https://panda.ecs.kyoto-u.ac.jp/portal")
