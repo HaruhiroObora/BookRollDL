@@ -1,7 +1,8 @@
+import multiprocessing
+multiprocessing.set_start_method('fork', force=True)
+
 from Driver import *
 from PdfCreator import *
-
-import multiprocessing
 
 import tkinter as tk
 from tkinter import ttk, filedialog
