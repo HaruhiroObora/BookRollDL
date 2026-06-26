@@ -37,8 +37,11 @@ def capture():
     for d in pdfdata:
         pdf.add_page(*d)
     path = filedialog.asksaveasfilename(defaultextension=".pdf")
-    if not path.lower().endswith(".pdf"):
-        path += ".pdf"
+    try:
+        if not path.lower().endswith(".pdf"):
+            path += ".pdf"
+    except:
+        return
     pdf.save(path)
 
 def gopanda():
@@ -47,23 +50,24 @@ def gopanda():
 def gokulms():
     driver.goto("https://lms.gakusei.kyoto-u.ac.jp/portal")
 
-window = tk.Tk()
-window.title("BookRollDL")
-window.attributes("-topmost", True)
+if __name__ == "__main__":
+    window = tk.Tk()
+    window.title("BookRollDL")
+    window.attributes("-topmost", True)
 
-window.resizable(False, False)
-sty = ttk.Style(window)
-sty.configure("main.TButton", font=",20")
+    window.resizable(False, False)
+    sty = ttk.Style(window)
+    sty.configure("main.TButton", font=",20")
 
-pandabtn = ttk.Button(text="PandA", command=gopanda)
-kulmsbtn = ttk.Button(text="KULMS", command=gokulms)
-startbtn = ttk.Button(style="main.TButton", text="取り込み開始", command=capture)
-pandabtn.grid(row=0, column=0, padx=10, pady=10)
-kulmsbtn.grid(row=0, column=1, padx=10, pady=10)
-startbtn.grid(row=1, column=0, columnspan=2, padx=10, pady=10)
+    pandabtn = ttk.Button(text="PandA", command=gopanda)
+    kulmsbtn = ttk.Button(text="KULMS", command=gokulms)
+    startbtn = ttk.Button(style="main.TButton", text="取り込み開始", command=capture)
+    pandabtn.grid(row=0, column=0, padx=10, pady=10)
+    kulmsbtn.grid(row=0, column=1, padx=10, pady=10)
+    startbtn.grid(row=1, column=0, columnspan=2, padx=10, pady=10)
 
-driver = Driver()
+    driver = Driver()
 
-window.mainloop()
+    window.mainloop()
 
-driver.quit()
+    driver.quit()
