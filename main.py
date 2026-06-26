@@ -41,18 +41,28 @@ def capture():
         path += ".pdf"
     pdf.save(path)
 
+def gopanda():
+    driver.goto("https://panda.ecs.kyoto-u.ac.jp/portal")
+
+def gokulms():
+    driver.goto("https://lms.gakusei.kyoto-u.ac.jp/portal")
+
 window = tk.Tk()
+window.title("BookRollDL")
 window.attributes("-topmost", True)
 
-window.geometry("200x200")
 window.resizable(False, False)
 sty = ttk.Style(window)
 sty.configure("main.TButton", font=",20")
-btn = ttk.Button(style="main.TButton", text="取り込み開始", command=capture)
-btn.place(x=100, y=100, anchor=tk.CENTER)
+
+pandabtn = ttk.Button(text="PandA", command=gopanda)
+kulmsbtn = ttk.Button(text="KULMS", command=gokulms)
+startbtn = ttk.Button(style="main.TButton", text="取り込み開始", command=capture)
+pandabtn.grid(row=0, column=0, padx=10, pady=10)
+kulmsbtn.grid(row=0, column=1, padx=10, pady=10)
+startbtn.grid(row=1, column=0, columnspan=2, padx=10, pady=10)
 
 driver = Driver()
-driver.goto("https://panda.ecs.kyoto-u.ac.jp/portal")
 
 window.mainloop()
 
