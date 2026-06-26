@@ -1,7 +1,7 @@
-##BookRollDL
+## BookRollDL
 BookRollで配布されているスライドをPDFとして保存できます．
 
-#インストール方法
+# インストール方法
 事前にPythonをインストールしておく必要があります．
 ```
 git clone https://github.com/HaruhiroObora/BookRollDL
@@ -16,7 +16,7 @@ source .venv/bin/activate
 pip install selenium beautifulsoup4 pymupdf pillow
 ```
 
-#実行方法
+# 実行方法
 仮想環境を有効にしておきます．
 ```
 source .venv/bin/activate
