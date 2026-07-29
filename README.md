@@ -29,6 +29,11 @@ source .venv/bin/activate
 ```
 pip install selenium beautifulsoup4 pymupdf pillow
 ```
+Mac OSの場合はこれに加えて
+```
+brew install python-tk
+```
+も必要です．
 
 ## 実行方法
 仮想環境を有効にしておきます．
